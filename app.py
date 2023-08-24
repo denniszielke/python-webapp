@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get('/')
 async def default(request: Request):
-    return { 'remoteip': request.client.host, 'realip': request.headers.get('x-real-ip', request.client.host), 'remoteaddr': request.client.host}
+    return { 'remoteip': request.client.host, 'realip': request.headers.get('x-real-ip', request.client.host), 'remoteaddr': request.client.host, 'headers': request.headers}
 
 @app.get('/ip')
 async def ip(request: Request):
